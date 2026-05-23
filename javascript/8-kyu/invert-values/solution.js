@@ -6,14 +6,7 @@
 // Synced : 24/5/2026
 
 function invert(array) {
-  const invertArr = []
-​
-array.forEach((value)=>{
-​
-  invertArr.push(value -( value + value)) 
-​
-})
-   return invertArr
+   return array.map((value)=> -value)
 }
 const Test = require('@codewars/test-compat');
 ​
