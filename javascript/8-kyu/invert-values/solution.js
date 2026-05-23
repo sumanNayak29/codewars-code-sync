@@ -1,0 +1,32 @@
+// Kata   : Invert values
+// Rank   : 8 kyu
+// Lang   : javascript
+// Tags   : Lists, Fundamentals, Arrays
+// URL    : https://www.codewars.com/kata/invert-values
+// Synced : 24/5/2026
+
+function invert(array) {
+  const invertArr = []
+​
+array.forEach((value)=>{
+​
+  invertArr.push(value -( value + value)) 
+​
+})
+   return invertArr
+}
+const Test = require('@codewars/test-compat');
+​
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+​
+describe("Invert array values",() => {
+  const norm = arr => arr.map(n => n === -0 ? 0 : n);
+  it("Basic Tests", () => {
+    assert.deepEqual(norm(invert([1,2,3,4,5])), [-1,-2,-3,-4,-5]);
+    assert.deepEqual(norm(invert([1,-2,3,-4,5])), [-1,2,-3,4,-5]);
+    assert.deepEqual(norm(invert([])), []);
+    assert.deepEqual(norm(invert([0])), [0]);
+  });
+});
